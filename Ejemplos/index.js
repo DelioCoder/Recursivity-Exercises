@@ -42,15 +42,23 @@ function palindromov1(w)
 
 function palindromov2(w)
 {
+    // Buscara cualquier carácter en una cadena que no sea una letra mayúscula(`A-Z`, `a-z`, `0-9`)
+    // El modificador `g` hace la búsqueda globar, es decir, no se detendra después de encontrar la primera coincidencia
+    var re = /[^A-Za-z0-9]/g; 
+
+    w = w.toLowerCase().replace(re, '');
+
     let newString = "";
 
     for (let i = w.length - 1; i >= 0; i--) {
         newString = newString + w[i];
     }
 
+    console.log(newString);
+
     let equal = (w.toLocaleLowerCase() === newString.toLocaleLowerCase()) ? true : false;
 
     return equal;
 }
 
-console.log(palindromov2("ana"));
+console.log(palindromov2("never odd or even"));
