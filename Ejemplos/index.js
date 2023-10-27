@@ -82,4 +82,29 @@ function reverse(w)
 
 }
 
-console.log(reverse("Hola"));
+// console.log(reverse("Hola"));
+
+function trianguloPascal(n)
+{
+    if(n == 0)
+    {
+        return [1];
+    }else {
+        let old         = trianguloPascal(n-1); // 0 => [1]
+        let newArray    = [];
+        for (let i = 0; i < old.length-1; i++) {
+            newArray.push(old[i] + old[i + 1]);
+            
+        }
+        return [1].concat(newArray).concat([1]);
+    }
+
+}
+
+// for (let i = 0; i < 2; i++) {
+//     console.log(trianguloPascal(i)); // 1
+// }
+
+let array = [1];
+
+console.log(array[1] + array[0]);
