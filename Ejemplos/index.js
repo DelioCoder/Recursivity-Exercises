@@ -28,6 +28,10 @@ function convertDecimalToHexa(n)
 function palindromov1(w)
 {
 
+    var re = /[^A-Za-z0-9]/g; 
+
+    w = w.toLowerCase().replace(re, '');
+
     let splitString = w.split("");
 
     let splitStringReverse = splitString.reverse();
@@ -61,4 +65,21 @@ function palindromov2(w)
     return equal;
 }
 
-console.log(palindromov2("never odd or even"));
+// console.log(palindromov2("never odd or even"));
+
+function reverse(w)
+{
+
+    let stringReverse = "";
+
+    for (let i = w.length - 1; i >= 0; i--) {
+        
+        stringReverse = stringReverse + w[i];
+
+    }
+
+    return stringReverse;
+
+}
+
+console.log(reverse("Hola"));
